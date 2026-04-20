@@ -6,5 +6,29 @@
   "skipDangerousModePermissionPrompt": true,
   "env": {
     "CLAUDE_CODE_USE_POWERSHELL_TOOL": "1"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /c/Users/ASUS-LAPTOP/.claude && git pull --rebase origin master 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /c/Users/ASUS-LAPTOP/.claude && git add settings.json .gitignore projects/C--ClaudeBox/memory/ 2>/dev/null; git diff --staged --quiet || git commit -m \"Auto-save: $(date '+%Y-%m-%d %H:%M') - config and memory update\" && git push origin master 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
   }
 }
