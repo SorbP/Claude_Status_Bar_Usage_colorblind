@@ -5,6 +5,8 @@
 !.gitignore
 !settings.json
 !settings.local.json
+!usage_statusline.py
+!session_receipt.py
 
 # Track memory (nested path requires explicit rules)
 !/projects/
