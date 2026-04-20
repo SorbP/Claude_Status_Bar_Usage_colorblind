@@ -4,6 +4,9 @@
   },
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true,
+  "env": {
+    "CLAUDE_CODE_USE_POWERSHELL_TOOL": "1"
+  },
   "statusLine": {
     "type": "command",
     "command": "python ~/.claude/usage_statusline.py"
