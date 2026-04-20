@@ -1,0 +1,16 @@
+# Ignore everything by default
+/*
+
+# Track these
+!.gitignore
+!settings.json
+!settings.local.json
+
+# Track memory (nested path requires explicit rules)
+!/projects/
+projects/*
+!projects/C--ClaudeBox/
+projects/C--ClaudeBox/*
+!projects/C--ClaudeBox/memory/
+projects/C--ClaudeBox/memory/*
+!projects/C--ClaudeBox/memory/*.md
