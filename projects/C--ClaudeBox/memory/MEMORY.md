@@ -1,3 +1,4 @@
 # Memory Index
 
-- [Git sync setup for Claude config](project_git_sync_setup.md) — Hemadatorn ej uppsatt än, påminn användaren att köra git-setup för statusline/config-repot
+- [Git sync setup for Claude config](project_git_sync_setup.md) — GitHub-sync aktiv på båda maskinerna via hooks i settings.json
+- [Linux migration research](project_linux_migration.md) — FX505DV hårdvara, CachyOS vald, gaming/mjukvara/färgblindhet research klar
