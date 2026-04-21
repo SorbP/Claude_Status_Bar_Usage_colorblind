@@ -9,7 +9,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "\"C:\\Program Files\\Python313\\python.exe\" \"%USERPROFILE%\\.claude\\usage_statusline.py\""
+    "command": "\"C:\\Program Files\\Python313\\python.exe\" \"C:\\Users\\ASUS-LAPTOP\\.claude\\usage_statusline.py\""
   },
   "hooks": {
     "UserPromptSubmit": [
