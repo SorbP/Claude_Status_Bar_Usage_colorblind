@@ -9,7 +9,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "python ~/.claude/usage_statusline.py"
+    "command": "powershell -NoProfile -File \"%USERPROFILE%\\.claude\\usage_statusline.ps1\""
   },
   "hooks": {
     "UserPromptSubmit": [
