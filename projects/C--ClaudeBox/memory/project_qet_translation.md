@@ -6,24 +6,21 @@ originSessionId: bf444f34-967e-45d0-8e5e-bcaacad1eaa0
 ---
 Bygger svensk översättning av QElectroTech:s elementbibliotek (6842 .elmt-filer i C:\Program Files\QElectroTech\elements\).
 
-**Status: KLAR — 4742 filer patchade 2026-04-22**
+**Status: HELT KLAR 2026-04-22**
+
+- 4 742 `.elmt`-elementfiler patchade med `<name lang="sv">`
+- 1 034 `qet_directory`-kategorifiler patchade med `<name lang="sv">`
+- Verifierat i QET — både elementnamn och kategorimappar visas på svenska
 
 **Filer i C:\ClaudeBox\QElectroTech\:**
-- `extract_english_names.py` — extraherar engelska namn → `element_names.json` (6842 poster, KLAR)
-- `translate_names.py` — Claude Haiku API med prompt caching, batch 5 namn → `translations.json` (KLAR)
-- `patch_element_files.py` — infogar `<name lang="sv">` i varje .elmt-fil (VÄNTAR PÅ ADMIN)
-- `element_names.json` — 6842 poster extraherade
-- `translations.json` — 3972 översättningar klara (4 korrupta poster hoppades över)
-- `apl_mall.qet` — BH90-mall med 3 ark (Planritning E-001, Kretschema E-101, Huvudledningsschema E-201)
+- `extract_english_names.py` — extraherar engelska namn → `element_names.json`
+- `translate_names.py` — översätter elementnamn via Claude Haiku API
+- `patch_element_files.py` — patchar .elmt-filer (Windows: attrib -r/+r istället för chmod)
+- `translate_and_patch_categories.py` — översätter + patchar qet_directory-filer
+- `translations.json` — ~4 750 översättningar (element + kategorier)
+- `apl_mall.qet` — BH90-mall med 3 ark
 - `validate_qet.py` — BH90-valideringsscript
 - `new_apl_project.py` — projektgenerator med CLI-argument
 
-**Lösning på Windows-behörighetsproblem:**
-`chmod` fungerade inte på Windows ACL. Löstes med `subprocess.run(['attrib', '-r', ...])` före skrivning och `+r` efteråt.
-
-**Anthropic API-nyckel:**
-Används för translate_names.py. Nyckeln är inte sparad — användaren anger den manuellt.
-OBS: Tidigare nyckel exponerades i chatten — bör roteras på console.anthropic.com.
-
 **Why:** Bidra tillbaka till QET-communityn med en komplett svensk översättning.
-**How to apply:** Nästa steg = patch-steget. Om admin-frågan lösts, kör patch_element_files.py och verifiera i QET att svenska namn visas i elementbiblioteket.
+**How to apply:** Projektet är avslutat. Inga fler åtgärder krävs.
