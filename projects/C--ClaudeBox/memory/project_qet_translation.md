@@ -6,7 +6,7 @@ originSessionId: bf444f34-967e-45d0-8e5e-bcaacad1eaa0
 ---
 Bygger svensk översättning av QElectroTech:s elementbibliotek (6842 .elmt-filer i C:\Program Files\QElectroTech\elements\).
 
-**Status: pipeline klar, sista steget blockerat av filrättigheter**
+**Status: KLAR — 4742 filer patchade 2026-04-22**
 
 **Filer i C:\ClaudeBox\QElectroTech\:**
 - `extract_english_names.py` — extraherar engelska namn → `element_names.json` (6842 poster, KLAR)
@@ -18,11 +18,8 @@ Bygger svensk översättning av QElectroTech:s elementbibliotek (6842 .elmt-file
 - `validate_qet.py` — BH90-valideringsscript
 - `new_apl_project.py` — projektgenerator med CLI-argument
 
-**Blockerande problem:**
-Filerna i C:\Program Files\QElectroTech\elements\ har attribut 0o100444 (skrivskyddade).
-patch_element_files.py försöker `chmod` + skriva, men kräver admin.
-Användaren behöver köra scriptet från en admin-PowerShell:
-`python C:\ClaudeBox\QElectroTech\patch_element_files.py`
+**Lösning på Windows-behörighetsproblem:**
+`chmod` fungerade inte på Windows ACL. Löstes med `subprocess.run(['attrib', '-r', ...])` före skrivning och `+r` efteråt.
 
 **Anthropic API-nyckel:**
 Används för translate_names.py. Nyckeln är inte sparad — användaren anger den manuellt.
