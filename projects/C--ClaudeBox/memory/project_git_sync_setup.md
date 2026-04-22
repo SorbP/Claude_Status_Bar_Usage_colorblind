@@ -6,18 +6,11 @@ originSessionId: 18b54822-ad76-43b1-b6f4-bf2428d0d657
 ---
 GitHub-repot `https://github.com/SorbP/Claude_Status_Bar_Usage_colorblind.git` innehåller Claude config (settings.json, memory, statusline med färgblindhetstema).
 
-Den här maskinen (DESKTOP/jobbdator) är uppsatt och pushar automatiskt.
+Båda maskinerna är uppsatta och kopplade till repot.
 
-**Hemadatorn är INTE uppsatt ännu.**
+- **Desktop/jobbdator:** uppsatt, pushar automatiskt.
+- **Laptop (FX505DV / ASUS-LAPTOP):** uppsatt 2026-04-21, symlänkar fixade.
 
-**Why:** Användaren kom på detta 2026-04-20, åkte hem för att äta dumplings och skulle göra det sedan.
+**Why:** Användaren ville synka Claude-config mellan maskinerna.
 
-**How to apply:** PÅMINN användaren i början av nästa session att köra git-setup på hemadatorn:
-```bash
-cd ~/.claude
-git init
-git remote add origin https://github.com/SorbP/Claude_Status_Bar_Usage_colorblind.git
-git config user.email "sorbpen@gmail.com"
-git config user.name "SorbP"
-git pull origin master
-```
+**How to apply:** Ingen åtgärd krävs — båda maskinerna är redo.
