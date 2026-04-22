@@ -54,5 +54,18 @@ Okabe-Ito-paletten används genomgående. Colorblind test-skript genererat (Pyth
 VS Code: GitHub Dark Colorblind-tema + token-overrides.
 Kitty: okabe-ito-deutan.conf (genererad av agent).
 
+**VIKTIGT — Linux-migrationen gäller ENBART laptopen (FX505DV), inte desktopen.**
+
+**Desktop-maskin (stannar på Windows):**
+- GPU: RTX 3090 med custom vattenkylingssystem (max 55°C under load)
+- Precision-tunad undervolting: max 0.970V → effektiv klocka 2035MHz (upp från 1860MHz stock boost)
+- Stannar på Windows permanent p.g.a. att NVIDIA Linux-drivrutinen inte stödjer custom voltkurva
+- Voltage curve-bristen är en dealbreaker för den här maskinen
+
+**OSD/monitoring på Linux (utrett):**
+- RTSS-ersättare: MangoHud (nära ekvivalent, per-core CPU/GPU, frame time graph) ✅
+- HWMonitor-ersättare: btop + nvtop ✅
+- Afterburner-ersättare: GreenWithEnvy — fan curve + clock offset ✅, men ingen voltkurva ❌
+
 **Why:** Användaren vill ha bättre kontroll, bättre terminal-upplevelse, och Linux-ekosystemets fördelar.
-**How to apply:** Fortsätt planera installation. Nästa steg är att bestämma om CachyOS eller Nobara, och planera dual-boot eller ren installation.
+**How to apply:** Linux-migration = laptopen (FX505DV) med CachyOS. Desktop rörs inte. Fråga aldrig om att migrera desktopen till Linux.
