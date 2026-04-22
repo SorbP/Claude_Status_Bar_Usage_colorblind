@@ -20,10 +20,24 @@ Användaren planerar att byta från Windows 10 till Linux på ASUS TUF Gaming FX
 - Wooting-tangentbord (Wootility AppImage, fungerar)
 - RME Fireface 400 via FireWire (FFADO-drivrutin, TI-chipset bekräftat)
 
-**Distro-beslut: CachyOS** (Arch-baserat, rolling, bäst gaming-prestanda, x86-64-v3 optimerade paket, BORE-scheduler)
+**Distro-beslut: CachyOS** (Arch-baserat, rolling, bäst gaming-prestanda, x86-64-v3 optimerade paket, BORE-scheduler) — Hyprland-edition
 Alternativ: Nobara Linux (om CachyOS känns för avancerat)
 
-**Terminal-stack beslutad:** Kitty + Fish + Starship + JetBrains Mono Nerd Font
+**Desktop-miljö: Hyprland** (Wayland-compositor, tiling WM)
+- Super-tangenten = Windows-knappen
+- Super+1–0 = workspaces
+- Super+V = flytande fönster toggle
+- Flytande appar via windowrules: Thunar (filhanterare), comic-viewer etc.
+- NVIDIA-patches ingår i CachyOS Hyprland-edition
+- Alternativ: KDE Plasma Wayland om NVIDIA krånglar (officiellt stöd)
+
+**Filhantering:**
+- Yazi (terminal, bildförhandsvisning via Kitty Graphics Protocol, y = kopiera sökväg)
+- Thunar (GUI, konfigureras som flytande = som Explorer)
+
+**Statusfält/launcher:** Waybar + Wofi
+
+**Terminal-stack beslutad:** Kitty + Zellij + Fish + Starship + JetBrains Mono Nerd Font + Yazi
 
 **Gaming-status:**
 - NVIDIA på Linux: ~80-85% av Windows-prestanda, sämre frame timing
