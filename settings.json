@@ -6,17 +6,6 @@
     "defaultMode": "bypassPermissions"
   },
   "hooks": {
-    "UserPromptSubmit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd ~/.claude && git pull --rebase origin master 2>/dev/null || true"
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "matcher": "",
