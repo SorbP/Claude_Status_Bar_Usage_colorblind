@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Claude Code status line: 5h/7d usage bars + last two prompt costs.
-Colors: blue (low) -> yellow (mid) -> bright-yellow (high) — colorblind-friendly.
+Colors: blue (low) → gold → yellow (high) → orange (critical) — deuteranopi-optimal.
 Caches every 60 seconds.
 
 Adjust caps if you hit rate limits before bars reach 100%:
@@ -21,13 +21,14 @@ CAP_7D          = 30_000_000
 HEAVY_EXCHANGE  = 50_000     # tokens — flag single turns above this as expensive
 HEAVY_PAUSE_S   = 120        # seconds — flag turns that took longer than this
 
-# Okabe-Ito (2008) palette — optimized for deuteranopia, true 24-bit ANSI
-# Low → Medium → High → Critical using blue/yellow axis (intact in deutan vision)
+# Custom blue-yellow deuteranopia palette (deutan_blueyellow.html)
+# Low → Medium → High → Critical along blue/warm axis
 def tc(r,g,b): return f"\033[38;2;{r};{g};{b}m"
-SKY_BLUE  = tc(86,  180, 233)  # #56B4E9 — low      (cool, light blue)
-TEAL      = tc(0,   158, 115)  # #009E73 — medium   (blue-green, distinct from sky)
-AMBER     = tc(230, 159, 0  )  # #E69F00 — high     (warm orange-yellow)
-VERMILLON = tc(213, 94,  0  )  # #D55E00 — critical (deep orange, dark & warm)
+SKY_BLUE  = tc(160, 200, 250)  # #A0C8FA — low      (light blue)
+TEAL      = tc(0,   120, 250)  # #0078FA — medium   (bright blue)
+AMBER     = tc(220, 190, 70 )  # #DCBE46 — high     (gold)
+VERMILLON = tc(210, 90,  0  )  # #D25A00 — critical (deep orange)
+WARN      = tc(250, 250, 70 )  # #FAFA46 — reset warning (bright yellow)
 DIM   = "\033[2m"
 RESET = "\033[0m"
 
@@ -193,7 +194,7 @@ if earliest_5h:
     reset_in = int((earliest_5h + 5 * 3600) - time.time())
     if reset_in > 0:
         h, m = divmod(reset_in // 60, 60)
-        reset_str = f"  {DIM}reset{RESET} {SKY_BLUE}{h}h{m:02d}m{RESET}" if h else f"  {DIM}reset{RESET} {AMBER}{m}m{RESET}"
+        reset_str = f"  {DIM}reset{RESET} {SKY_BLUE}{h}h{m:02d}m{RESET}" if h else f"  {DIM}reset{RESET} {WARN}{m}m{RESET}"
     else:
         reset_str = ""
 else:
