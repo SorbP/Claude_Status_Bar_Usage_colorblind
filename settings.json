@@ -38,6 +38,7 @@
   },
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true,
+  "feedbackSurveyRate": 0,
   "enabledPlugins": {
     "warp@claude-code-warp": true
   }
