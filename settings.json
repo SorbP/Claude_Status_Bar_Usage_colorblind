@@ -12,12 +12,28 @@
         "hooks": [
           {
             "type": "command",
+            "command": "python3 /home/sorbp/.claude/session_sync.py --save",
+            "async": true
+          },
+          {
+            "type": "command",
             "command": "cd ~/.claude && git add settings.json .gitignore *.py projects/*/memory/ 2>/dev/null; git diff --staged --quiet || git commit -m \"Auto-save: $(date '+%Y-%m-%d %H:%M')\" && git push origin master 2>/dev/null || true",
             "async": true
           },
           {
             "type": "command",
             "command": "python3 ~/.claude/session_receipt.py",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/sorbp/.claude/session_sync.py --on-prompt",
             "async": true
           }
         ]
