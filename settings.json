@@ -48,6 +48,10 @@
       }
     }
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/sorbp/.claude/statusline-command.sh"
+  },
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyRate": 0,
